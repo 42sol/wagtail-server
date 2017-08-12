@@ -22,7 +22,10 @@ def main( x_s_app_path = '/' ):
     
     l_o_server2 = cherrypy._cpserver.Server()
     setup_app(l_o_server2, {{app-name-2}}, {{app-port-2}}) # use default parameters for host ip-address (local host)
-     
+    
+    l_o_server3 = cherrypy._cpserver.Server()
+    setup_app(l_o_server3, {{app-name-3}}, {{app-port-3}}) # use default parameters for host ip-address (local host)
+    
     # -[5] start-up server engines
     cherrypy.engine.start()
     cherrypy.engine.block()
