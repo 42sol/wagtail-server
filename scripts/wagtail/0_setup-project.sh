@@ -18,10 +18,10 @@ cd $1            # setup the database
 echo "-[2] prepare for running (migrate)"
 python3 manage.py migrate
 echo "-[3] create a superuser account"
-echo "     hit CTRL-C if all is fine"
-echo ""
 python3 manage.py createsuperuser # create an administrator account
 echo "-[4] run the development server - only to see if all is fine"
+echo "     hit CTRL-C if all is fine"
+echo ""
 python3 manage.py runserver
 echo "-[5] copy script to project folder"
 cp ../*.sh .
