@@ -1,10 +1,14 @@
+; based on https://www.digitalocean.com/community/questions/convert-run-at-startup-script-from-upstart-to-systemd-for-ubuntu-16
+; modified by felix@42sol.eu
+
 [Unit]
 Description=Run CherryPy as WSGI Server
 
 [Service]
 ;Environment= {{environment-variable}} ={{full-path-to-environment-file}}/{{environment-file}}
 WorkingDirectory={{full-path-to-working-directory}}
-ExecStart=/usr/bin/python3 server_wagtail.py
+ExecStart=/usr/bin/python3 server_wagtail.py 
+; ^ runs cherrypy as a instance to one ore more apps 
 Restart=always
 
 [Install]
