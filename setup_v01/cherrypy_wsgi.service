@@ -1,8 +1,13 @@
 ; based on https://www.digitalocean.com/community/questions/convert-run-at-startup-script-from-upstart-to-systemd-for-ubuntu-16
 ; modified by felix@42sol.eu
+; copy this to /etc/systemd/system
+; SETUP WITH: (using root)
+;  systemctl daemon-reload
+;  systemctl enable cherrypy_wsgi.service
+;  systemctl start cherrypy_wsgi.service
 
 [Unit]
-Description=Run CherryPy as WSGI Server
+Description=Run CherryPy as WSGI Server {{project-name}}
 
 [Service]
 ;Environment= {{environment-variable}} ={{full-path-to-environment-file}}/{{environment-file}}
