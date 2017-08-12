@@ -6,4 +6,4 @@ I find the following scripts helpfull for my personal usage
 - `3_run.sh`[^run.sh]: use local cherrypy-script to run the wsgi-server 
 - `9_backup.sh NOTE`: use `zip` to make a quick backup from the local directory
 
-[^run]: used until the wsgi-server (cherrypy) runs from services
+[^run.sh]: used until the wsgi-server (cherrypy) runs from services
