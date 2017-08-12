@@ -1,0 +1,11 @@
+[Unit]
+Description=Run CherryPy as WSGI Server
+
+[Service]
+;Environment= {{environment-variable}} ={{full-path-to-environment-file}}/{{environment-file}}
+WorkingDirectory={{full-path-to-working-directory}}
+ExecStart=/usr/bin/python3 server_wagtail.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
