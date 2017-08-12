@@ -162,10 +162,8 @@ python3 server_{{project-name}}.py
 - check functions
 
 
+TODO: Extend the HomePage model http://docs.wagtail.io/en/v1.11.1/getting_started/tutorial.html#extend-the-homepage-model
 
-
-
-- add {{ip-address}} 172.104.128.206
 
 ### Setup Webserver
 ### Setup WSGI-Server
