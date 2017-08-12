@@ -70,9 +70,6 @@ python3 -V
 pip3 -V
 ```
 
-
-
-
 ### Wagtail Application
 - install cherrypy
 ```bash
@@ -83,76 +80,12 @@ sudo pip3 install cherrypy
 sudo pip3 install wagtail
 ```
 - write cherrypy server 
-- create file with ```nano server_{{project-name}}.py#```
-- insert
-```python
-# Import your application as:
-# from wsgi import application
-# Example:
+- create file with `server_wagtail.py`
+- use content of `server_wagtail.py` from correspoinding setup folder
+- save file and leave nano
 
-from test_setup.wsgi import application
-
-# Import CherryPy
-import cherrypy
-
-if __name__ == '__main__':
-
-    # Mount the application
-    cherrypy.tree.graft(application, "/")
-
-    # Unsubscribe the default server
-    cherrypy.server.unsubscribe()
-
-    # Instantiate a new server object
-    server = cherrypy._cpserver.Server()
-
-    # Configure the server object
-    server.socket_host = "0.0.0.0"
-    server.socket_port = 8001
-    server.thread_pool = 30
-
-    # For SSL Support
-    # server.ssl_module            = 'pyopenssl'
-    # server.ssl_certificate       = 'ssl/certificate.crt'
-    # server.ssl_private_key       = 'ssl/private.key'
-    # server.ssl_certificate_chain = 'ssl/bundle.crt'
-
-    # Subscribe this server
-    server.subscribe()
-
-    # Example for a 2nd server (same steps as above):
-    # Remember to use a different port
-
-    # this file comes from anoter tutorial 
-    # Subscribe this server
-    server.subscribe()
-
-    # Example for a 2nd server (same steps as above):
-    # Remember to use a different port
-
-    # server2             = cherrypy._cpserver.Server()
-
-    # server2.socket_host = "0.0.0.0"
-    # server2.socket_port = 8081
-    # server2.thread_pool = 30
-    # server2.subscribe()
-
-    # Start the server engine (Option 1 *and* 2)
-
-    cherrypy.engine.start()
-    cherrypy.engine.block()
-```
-- save file
-
-- setup a new wagtail project
-```bash
-wagtail start {{project-name}} # setup the project
-cd {{project-name}}            # setup the database
-python3 manage.py migrate
-python3 manage.py createsuperuser # create an administrator account
-python3 wagtail_server.py
-```
-- add '{{ip-address}}' and 'localhost' to ALLOWED_HOSTS in ```settings\base.py```
+- setup a new wagtail project with `scripts\wagtail\0_setup-project.sh`
+- add '{{ip-address}}' and 'localhost' to ALLOWED_HOSTS in ```settings\base.py``` of all projects
 - run cherrypy from folder as manage.py of your project
 ```bash
 python3 server_{{project-name}}.py
