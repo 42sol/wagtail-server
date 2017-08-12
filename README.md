@@ -1,7 +1,10 @@
 # wagtail-server
 Creating a Server For Wagtail Project (Documentation and Scripts) using linode and ubuntu-linux 
 
-TODO: still under construction !!
+WARNING: still under construction !!
+TODO: find a solution to serve static data (/media) with nginx from multiple folders
+TODO: find a solution to serve different wsgi apps with cherrypy (server_wagtail.py imports one application from specific module) -> run it more than once ? load all applications?
+TODO: change bash-scripts to python (because I suck in bash programming)
 
 ## Setup
 - Server runs on a [linode] server
